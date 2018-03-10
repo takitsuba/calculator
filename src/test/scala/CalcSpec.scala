@@ -24,7 +24,7 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     assert(calc.mul(Seq()) === 0)
   }
 
-  it should "Intの最大を上まった際にはオーバーフローする" in {
-    assert(calc.mul(Seq(Integer.MAX_VALUE, 2)) === Integer.MIN_VALUE)
+  it should "Intの最大を上まった際にはオーバーフローのメッセージを出す" in {
+    assert(calc.mul(Seq(Integer.MAX_VALUE, 2)) === "Overflow, Error")
   }
 }
