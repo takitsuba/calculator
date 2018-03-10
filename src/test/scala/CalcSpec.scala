@@ -25,6 +25,8 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
   }
 
   it should "Intの最大を上まった際にはオーバーフローのメッセージを出す" in {
-    assert(calc.mul(Seq(Integer.MAX_VALUE, 2)) === "Overflow, Error")
+    intercept[ArithmeticException]{
+      calc.mul(Seq(Integer.MAX_VALUE, 2))
+    }
   }
 }
