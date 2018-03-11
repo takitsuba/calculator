@@ -9,8 +9,8 @@ class Calc {
     case 0 => 0
     case _ => seq.foldLeft(1)((x, y) => {
       val ans = x.toLong * y.toLong
-      if (ans > Int.MaxValue){
-        throw new ArithmeticException("Overflow, Error")
+      if (ans < Int.MinValue || ans > Int.MaxValue){
+        throw new ArithmeticException("Int out of bounds")
       }
       ans.toInt
     } )
