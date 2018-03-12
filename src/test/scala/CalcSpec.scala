@@ -15,6 +15,24 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     assert(calc.sum(Seq(Integer.MAX_VALUE, 1)) === Integer.MIN_VALUE)
   }
 
+  "sub関数" should "整数を2つ受け取り、前の数からあとの数を引いた値を返すことができる" in {
+    assert(calc.sum(Seq(2,3)) === -1)
+    assert(calc.sum(Seq(5,4)) === 1)
+    assert(calc.sum(Seq(5,-4)) === 9)
+    assert(calc.sum(Seq(-5,-4)) === -1)
+    assert(calc.sum(Seq(0)) === 0)
+    assert(calc.sum(Seq(4)) === 4)
+    assert(calc.sum(Seq()) === 0)
+  }
+
+  it should "Intの最大を上まった際にはオーバーフローする" in {
+    assert(calc.sum(Seq(Integer.MAX_VALUE, -1)) === Integer.MIN_VALUE)
+  }
+
+  it should "Intの最小を下まった際にはアンダーフローする" in {
+    assert(calc.sum(Seq(Integer.MIN_VALUE, 1)) === Integer.MAX_VALUE)
+  }
+
   "mul関数" should "整数の配列を取得し、それらを掛け合わせた整数を返すことができる" in {
     assert(calc.mul(Seq(2,3,4)) === 24)
     assert(calc.mul(Seq(2,3,0)) === 0)
