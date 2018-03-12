@@ -26,11 +26,11 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
   }
 
   it should "Intの最大を上まった際にはオーバーフローする" in {
-    assert(calc.sum(Seq(Integer.MAX_VALUE, -1)) === Integer.MIN_VALUE)
+    assert(calc.sub(Seq(Integer.MAX_VALUE, -1)) === Integer.MIN_VALUE)
   }
 
   it should "Intの最小を下まった際にはアンダーフローする" in {
-    assert(calc.sum(Seq(Integer.MIN_VALUE, 1)) === Integer.MAX_VALUE)
+    assert(calc.sub(Seq(Integer.MIN_VALUE, 1)) === Integer.MAX_VALUE)
   }
 
   "mul関数" should "整数の配列を取得し、それらを掛け合わせた整数を返すことができる" in {
