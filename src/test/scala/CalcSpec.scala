@@ -16,13 +16,13 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
   }
 
   "sub関数" should "整数を2つ受け取り、前の数からあとの数を引いた値を返すことができる" in {
-    assert(calc.sum(Seq(2,3)) === -1)
-    assert(calc.sum(Seq(5,4)) === 1)
-    assert(calc.sum(Seq(5,-4)) === 9)
-    assert(calc.sum(Seq(-5,-4)) === -1)
-    assert(calc.sum(Seq(0)) === 0)
-    assert(calc.sum(Seq(4)) === 4)
-    assert(calc.sum(Seq()) === 0)
+    assert(calc.sub(Seq(2,3)) === -1)
+    assert(calc.sub(Seq(5,4)) === 1)
+    assert(calc.sub(Seq(5,-4)) === 9)
+    assert(calc.sub(Seq(-5,-4)) === -1)
+    assert(calc.sub(Seq(0)) === 0)
+    assert(calc.sub(Seq(4)) === 4)
+    assert(calc.sub(Seq()) === 0)
   }
 
   it should "Intの最大を上まった際にはオーバーフローする" in {
