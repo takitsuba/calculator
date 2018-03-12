@@ -5,6 +5,12 @@ class Calc {
    */
   def sum(seq: Seq[Int]): Int = seq.foldLeft(0)((x, y) => x + y )
 
+  def sub(seq: Seq[Int]): Int = seq.length match{
+    case 0 => 0
+    case 1 => seq(0)
+    case 2 => seq(0) - seq(1)
+  }
+
   def mul(seq: Seq[Int]): Any = seq.length match {
     case 0 => 0
     case _ => seq.foldLeft(1)((x, y) => {
