@@ -21,4 +21,9 @@ class Calc {
       ans.toInt
     } )
   }
+
+  def div(numerator: Int, denominator: Int): Double = {
+    if (denominator == 0) throw new ArithmeticException("/ by zero")
+    numerator.toDouble / denominator.toDouble
+  }
 }

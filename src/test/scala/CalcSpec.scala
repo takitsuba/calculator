@@ -53,4 +53,16 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
       calc.mul(Seq(Integer.MIN_VALUE, 2))
     }
   }
+
+  "div関数" should "整数を2つ受け取り、分子を分母で割った浮動小数てんの値を返す" in {
+    assert(calc.div(6,3) === 2.0)
+    assert(calc.div(1,3) === 0.3333333333333333)
+  }
+
+  it should "0で割ろうとした際には実行時例外が投げられる" in {
+    intercept[ArithmeticException]{
+      calc.div(1,0)
+    }
+  }
+
 }
