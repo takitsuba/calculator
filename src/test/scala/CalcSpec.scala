@@ -71,4 +71,9 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     assert(calc.power(4,-1) === 0.25)
   }
 
+  it should "0をマイナス累乗した際には実行時例外が投げられる" in {
+    intercept[ArithmeticException]{
+      calc.power(0,-1)
+    }
+  }
 }
