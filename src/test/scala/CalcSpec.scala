@@ -65,4 +65,15 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     }
   }
 
+  "power関数" should "整数を2つ受け取り、1要素めを2要素乗した値を返す" in {
+    assert(calc.power(2,3) === 8)
+    assert(calc.power(3,0) === 1)
+    assert(calc.power(4,-1) === 0.25)
+  }
+
+  it should "0をマイナス累乗した際には実行時例外が投げられる" in {
+    intercept[ArithmeticException]{
+      calc.power(0,-1)
+    }
+  }
 }
