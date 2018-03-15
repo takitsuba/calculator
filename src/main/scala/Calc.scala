@@ -27,10 +27,10 @@ class Calc {
     numerator.toDouble / denominator.toDouble
   }
 
-  def power(base: Int, exponent: Int): Double = exponent match {
-    case e if e == 0 => 1
-    case e if e >  0 => mul(Seq.fill(exponent)(base))
-    case e if e <  0 => {
+  def power(base: Int, exponent: Int): Double = {
+    if (exponent > 0) mul(Seq.fill(exponent)(base))
+    else if (exponent == 0) 1
+    else {
       if (base == 0) throw new ArithmeticException("minus power by zero")
       1.0 / mul(Seq.fill(exponent * -1)(base))
     }
