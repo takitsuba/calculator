@@ -35,4 +35,10 @@ class Calc {
       1.0 / mul(Seq.fill(exponent * -1)(base))
     }
   }
+
+  def factorial(num: Int): Int = {
+    if (num > 0) num * factorial(num-1)
+    else if (num == 0) 1
+    else throw new ArithmeticException("Num must be >=0")
+  }
 }

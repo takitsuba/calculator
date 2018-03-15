@@ -76,4 +76,16 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
       calc.power(0,-1)
     }
   }
+
+  "factorial関数" should "整数を1つ受け取り、階乗した値を返す" in {
+    assert(calc.factorial(4) === 24)
+    assert(calc.factorial(1) === 1)
+    assert(calc.factorial(0) === 1)
+  }
+
+  it should "負の数を与えた際には例外を返す" in {
+    intercept[ArithmeticException]{
+      calc.factorial(-2)
+    }
+  }
 }
