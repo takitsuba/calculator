@@ -88,4 +88,12 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
       calc.factorial(-2)
     }
   }
+
+  "abs関数" should "Doubleを受け取り、絶対値を返す" in {
+    assert(calc.abs(2) === 2)
+    assert(calc.abs(-3) === 3)
+    assert(calc.abs(4.1) === 4.1)
+    assert(calc.abs(-5.1) === 5.1)
+    assert(calc.abs(0) === 0)
+  }
 }
