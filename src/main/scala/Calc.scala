@@ -41,4 +41,9 @@ class Calc {
     else if (num == 0) 1
     else throw new ArithmeticException("Num must be >=0")
   }
+
+  def abs(num: Double): Double = {
+    if (num < 0) num * -1
+    else num
+  }
 }
