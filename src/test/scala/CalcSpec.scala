@@ -96,4 +96,20 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     assert(calc.abs(-5.1) === 5.1)
     assert(calc.abs(0) === 0)
   }
+
+  "isPrime関数" should "Intを受け取り、素数であればTrue,素数でなければFalseを返す" in {
+    assert(calc.isPrime(0) === false)
+    assert(calc.isPrime(1) === false)
+    assert(calc.isPrime(2) === true)
+    assert(calc.isPrime(3) === true)
+    assert(calc.isPrime(4) === false)
+    assert(calc.isPrime(4998) === false)
+    assert(calc.isPrime(4999) === true)
+  }
+
+  it should "負の数を与えた際には例外を返す" in {
+    intercept[ArithmeticException]{
+      calc.isPrime(-2)
+    }
+  }
 }
