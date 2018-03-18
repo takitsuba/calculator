@@ -46,4 +46,18 @@ class Calc {
     if (num < 0) num * -1
     else num
   }
+
+  def isPrime(num: Int): Boolean = num match {
+    case 0 => false
+    case 1 => false
+    case x if x < 0 => throw new ArithmeticException("Cannot Insert minus num")
+    case _ =>
+      def divideCheck(n: Int, d: Int): Boolean = {
+        if (d == 1) true
+        else if (n%d == 0) false
+        else divideCheck(n, d-1)
+      }
+      divideCheck(num,num-1)
+  }
+
 }
