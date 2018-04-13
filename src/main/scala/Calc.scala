@@ -1,4 +1,4 @@
-class Calc {
+object Calc {
   /* 整数の配列を取得し、それらを足し合わせた整数を返す
    *
    * Intの最大を上回った際にはオーバーフローする
@@ -22,7 +22,7 @@ class Calc {
     } )
   }
 
-  def div(numerator: Int, denominator: Int): Double = {
+  def div(numerator: Double, denominator: Double): Double = {
     if (denominator == 0) throw new ArithmeticException("/ by zero")
     numerator.toDouble / denominator.toDouble
   }
@@ -59,5 +59,4 @@ class Calc {
       }
       divideCheck(num,num-1)
   }
-
 }
